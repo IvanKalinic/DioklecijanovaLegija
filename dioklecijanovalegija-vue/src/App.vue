@@ -2,25 +2,24 @@
   <v-app>
     <v-navigation-drawer v-model="sideNav" temporary absolute>
       <v-list class="onebyone">
-        <v-list-tile 
+        <v-list-item 
         v-for="item in menuItems" 
         :key="item.title"
-        >
-          <v-btn text
-          router 
-        :to="item.link">
-            <v-list-tile-action>
+        >    
+          <v-btn text         
+        :to="item.link">   <!-- router -->
+            <v-list-item-action>
               <v-icon left>{{ item.icon }}</v-icon>
-            </v-list-tile-action>
-            <v-list-tile-content>{{item.title}}</v-list-tile-content>
+            </v-list-item-action>
+            <v-list-item-content>{{item.title}}</v-list-item-content>
           </v-btn>
-        </v-list-tile>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
     <v-app-navbar>
       <v-toolbar dark class="indigo darken-4">
         <span class="hidden-sm-and-up">
-          <v-app-bar-nav-icon @click.native.stop="sideNav= !sideNav"></v-app-bar-nav-icon>
+          <v-app-bar-nav-icon @click.stop="sideNav= !sideNav"></v-app-bar-nav-icon>  <!-- @click.native.stop = ... -->
         </span>
         <v-toolbar-title><router-link to="/" tag="span" style="cursor:pointer">Dev Meetup</router-link></v-toolbar-title>
 
@@ -30,7 +29,6 @@
           text 
           v-for="item in menuItems" 
           :key="item.title"
-          router 
           :to="item.link">
             <!--  flat class="indigo accent-3"  -->
             <v-icon left dark>{{ item.icon }}</v-icon>
