@@ -1,5 +1,14 @@
+
 <template>
   <div>
-    <p>The User page.</p>
+    <!-- <p>This is your email : {{email}} </p> -->
   </div>
 </template>
+
+<script>
+export default {
+  // props:['email']
+
+  // }
+}
+</script>
